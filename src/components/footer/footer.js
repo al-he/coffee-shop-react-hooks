@@ -7,7 +7,7 @@ const Footer = () => {
         <footer>
             <div className="container">
                 <div className="row">
-                    <div className="col-lg-5 offset-lg-4">
+                    <div className="col-lg-12">
                         <ul className="footer">
                             <li className="footer__item">
                                 <a href="/">
@@ -19,6 +19,9 @@ const Footer = () => {
                             </li>
                             <li className="footer__item">
                                 <a href="/">For your pleasure</a>
+                            </li>
+                            <li className="footer__item">
+                                <a href="/">Contact us</a>
                             </li>
                         </ul>
                     </div>

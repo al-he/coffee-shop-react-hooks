@@ -1,17 +1,16 @@
 import React from 'react';
-import girl from '../../assets/images/coffee_girl.jpg';
-import dark from '../../assets/images/Beans_logo_dark.svg';
+import dark from '../../assets/images/beans_logo_dark.svg';
 
-const PageContent = () => {
+const PageContent = props => {
     return (
-        <div class="row">
-            <div class="col-lg-4 offset-2">
-                <img class="shop__girl" src={girl} alt="girl" />
+        <div className="row">
+            <div className="col-lg-4 offset-2">
+                <img className="shop__girl" src={props.img} alt="girl" />
             </div>
-            <div class="col-lg-4">
-                <div class="title">About our beans</div>
-                <img class="beanslogo" src={dark} alt="Beans logo" />
-                <div class="shop__text">
+            <div className="col-lg-4">
+                <div className="title">About our beans</div>
+                <img className="beanslogo" src={dark} alt="Beans logo" />
+                <div className="shop__text">
                     Extremity sweetness difficult behaviour he of. On disposal
                     of as landlord horrible.
                     <br />

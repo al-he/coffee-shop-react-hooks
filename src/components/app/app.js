@@ -1,17 +1,14 @@
 import React from 'react';
-import Preview from '../preview';
-import AboutUs from '../about-us';
-import Best from '../best';
-import Footer from '../footer';
+import { Switch, Route } from 'react-router-dom';
+import Home from '../home';
+import { Coffee } from '../pages';
 
 const App = () => {
     return (
-        <>
-            <Preview />
-            <AboutUs />
-            <Best />
-            <Footer />
-        </>
+        <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/:name" exact component={Coffee} />
+        </Switch>
     );
 };
 

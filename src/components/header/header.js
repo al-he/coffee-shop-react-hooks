@@ -16,6 +16,9 @@ const Header = () => {
                 <li className="header__item">
                     <a href="/">For your pleasure</a>
                 </li>
+                <li className="header__item">
+                    <a href="/">Contact us</a>
+                </li>
             </ul>
         </header>
     );
