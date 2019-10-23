@@ -7,6 +7,8 @@ import {
     FETCH_COFFEE_REQUEST,
     FETCH_COFFEE_SUCCESS,
     FETCH_COFFEE_FAILURE,
+    PRODUCTS_FILTERING,
+    PRODUCTS_SEARCH,
 } from '../types';
 
 const CoffeeState = ({ children }) => {
@@ -14,6 +16,7 @@ const CoffeeState = ({ children }) => {
         coffee: [],
         loading: false,
         error: false,
+        filter: [],
     };
 
     const [state, dispatch] = useReducer(coffeeReducer, initialState);
@@ -28,11 +31,19 @@ const CoffeeState = ({ children }) => {
         }
     };
 
+    const clickFilter = text => {
+        dispatch({ type: PRODUCTS_FILTERING, payload: text });
+    };
+
+    const changeInput = text => {
+        dispatch({ type: PRODUCTS_SEARCH, payload: text });
+    };
+
     const fetchCoffeeRequest = () => dispatch({ type: FETCH_COFFEE_REQUEST });
 
     const fetchCoffeeFailure = () => dispatch({ type: FETCH_COFFEE_FAILURE });
 
-    const { coffee, loading, error } = state;
+    const { coffee, loading, error, filter } = state;
 
     return (
         <CoffeeContext.Provider
@@ -41,6 +52,9 @@ const CoffeeState = ({ children }) => {
                 loading,
                 error,
                 getCoffee,
+                clickFilter,
+                filter,
+                changeInput,
             }}>
             {children}
         </CoffeeContext.Provider>
