@@ -2,6 +2,8 @@ import React from 'react';
 import black from '../../assets/images/logo_black.svg';
 import dark from '../../assets/images/beans_logo_dark.svg';
 
+import { NavLink } from 'react-router-dom';
+
 const Footer = () => {
     return (
         <footer>
@@ -10,18 +12,20 @@ const Footer = () => {
                     <div className="col-lg-12">
                         <ul className="footer">
                             <li className="footer__item">
-                                <a href="/">
+                                <NavLink to="/">
                                     <img src={black} alt="logo" />
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="footer__item">
-                                <a href="/">Our coffee</a>
+                                <NavLink to="/coffee/">Our coffee</NavLink>
                             </li>
                             <li className="footer__item">
-                                <a href="/">For your pleasure</a>
+                                <NavLink to="/goods/">
+                                    For your pleasure
+                                </NavLink>
                             </li>
                             <li className="footer__item">
-                                <a href="/">Contact us</a>
+                                <NavLink to="/contacts/">Contact us</NavLink>
                             </li>
                         </ul>
                     </div>

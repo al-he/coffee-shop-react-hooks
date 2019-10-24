@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header';
 import beans from '../../assets/images/beans_logo.svg';
+import { Link } from 'react-router-dom';
 
 const Preview = () => {
     return (
@@ -27,9 +28,9 @@ const Preview = () => {
                         <div className="preview__subtitle">
                             Want to try our beans?
                         </div>
-                        <a href="/" className="preview__btn">
+                        <Link to="coffee" className="preview__btn">
                             More
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

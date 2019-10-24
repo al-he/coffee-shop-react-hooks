@@ -4,12 +4,12 @@ import PageContent from '../page-content';
 import Footer from '../footer';
 import PageList from './page-list';
 import { CoffeeContext } from '../../context/coffee/coffeeContext';
+import { Redirect } from 'react-router-dom';
 
 import girl from '../../assets/images/coffee_girl.jpg';
 import girl2 from '../../assets/images/goods-girl.png';
 
 const Coffee = props => {
-    console.log(props);
     const {
         coffee,
         loading,
@@ -23,7 +23,11 @@ const Coffee = props => {
     useEffect(() => {
         getCoffee(props.match.params.name);
         // eslint-disable-next-line
-    }, []);
+    }, [props.match.params.name]);
+
+    if (!coffee) {
+        return <Redirect to="/not-found/" />;
+    }
 
     const img = props.match.params.name === 'coffee' ? girl : girl2;
 
