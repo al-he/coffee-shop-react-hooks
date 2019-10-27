@@ -12,6 +12,7 @@ export const coffeeReducer = (state, action) => {
             return {
                 ...state,
                 loading: true,
+                filter: [],
             };
         case FETCH_COFFEE_SUCCESS:
             return {

@@ -9,7 +9,6 @@ const NotFound = () => {
             <div className="not-found_wrap">
                 <h1>Oooops! Page not Found</h1>
             </div>
-
             <Footer />
         </>
     );

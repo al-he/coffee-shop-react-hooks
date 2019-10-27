@@ -20,8 +20,13 @@ const Coffee = props => {
         changeInput,
     } = useContext(CoffeeContext);
 
+    const clearInput = () => {
+        document.querySelector('#filter').value = '';
+    };
+
     useEffect(() => {
         getCoffee(props.match.params.name);
+        clearInput();
         // eslint-disable-next-line
     }, [props.match.params.name]);
 
@@ -30,6 +35,10 @@ const Coffee = props => {
     }
 
     const img = props.match.params.name === 'coffee' ? girl : girl2;
+    const page = props.match.url.match(/\/([^|]*)\//)
+        ? props.match.url.match(/\/([^|]*)\//)[1]
+        : null;
+    const clazz = page === 'goods' ? 'goods-banner' : null;
 
     const title =
         props.match.params.name === 'coffee'
@@ -38,6 +47,7 @@ const Coffee = props => {
 
     const filterHandler = e => {
         if (e.target.matches('button')) {
+            clearInput();
             clickFilter(e.target.textContent.toLowerCase());
         }
     };
@@ -48,7 +58,7 @@ const Coffee = props => {
 
     return (
         <>
-            <Banner title={title} />
+            <Banner title={title} bg={clazz} />
             <section className="shop">
                 <div className="container">
                     <PageContent img={img} />
@@ -105,7 +115,6 @@ const Coffee = props => {
                     </div>
                 </div>
             </section>
-
             <Footer />
         </>
     );

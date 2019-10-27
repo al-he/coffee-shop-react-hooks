@@ -2,8 +2,10 @@ import React from 'react';
 import Header from '../header';
 
 const Banner = props => {
+    const claz = ['banner'];
+    claz.push(props.bg);
     return (
-        <div className="banner">
+        <div className={claz.join(' ')}>
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12">

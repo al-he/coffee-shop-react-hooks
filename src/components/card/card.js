@@ -3,7 +3,6 @@ import Footer from '../footer';
 import Banner from '../banner/';
 import Spinner from '../UI/spinner';
 import Error from '../UI/error';
-import { Redirect } from 'react-router-dom';
 import { CoffeeContext } from '../../context/coffee/coffeeContext';
 import img from '../../assets/images/beans_logo_dark.svg';
 
@@ -28,10 +27,6 @@ const Card = props => {
     const spinner = loading ? <Spinner /> : null;
     const er = error ? <Error /> : null;
     const hasData = !(loading || error) ? item : null;
-
-    // if (!lol.length) {
-    //     return <Redirect to="/not-found/" />;
-    // }
 
     return (
         <>
